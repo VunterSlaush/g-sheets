@@ -1,0 +1,46 @@
+<html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jexcel/2.1.0/js/jquery.jexcel.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jexcel/2.1.0/js/jquery.jdropdown.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jexcel/2.1.0/js/jquery.jcalendar.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jexcel/2.1.0/css/jquery.jexcel.min.css"
+  type="text/css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jexcel/2.1.0/css/jquery.jdropdown.min.css"
+  type="text/css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jexcel/2.1.0/css/jquery.jcalendar.min.css"
+  type="text/css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+<link rel="stylesheet" href="public/index.css" type="text/css" />
+
+<body>
+  <div class="row">
+    <div id="files" class="col-xs-4 col-sm-2">
+      <span>Selecciona un Archivo</span>
+      <div id="fileList">
+      </div>
+      <div class="row">
+        <button id="openButton" disabled onclick="openFile()">
+          Abrir
+        </button>
+        <form ref='uploadForm' id='uploadForm' action='/upload' method='post' encType="multipart/form-data">
+          <input type="file" id="uploadFile" name="file" />
+          <button>
+            Subir
+          </button>
+        </form>
+      </div>
+    </div>
+    <div id="editor" class="col-xs-8 col-sm-10">
+      <table id="excel"></table>
+    </div>
+  </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+<script src="public/files.js"></script>
+<script src="public/jexcel.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="public/sockets.js"></script>
+
+</html>

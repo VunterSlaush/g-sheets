@@ -1,0 +1,30 @@
+#files{
+    border: 1px solid;
+    height: auto;
+}
+
+#fileList{
+    padding: 5px;
+}
+
+#editor{
+    max-width: 100%;
+    overflow: auto;
+}
+
+.file-element{
+    cursor: pointer;
+}
+
+.selectedFileElement{
+    color: blue;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  table, th, td {
+    border: 1px solid black;
+  }
