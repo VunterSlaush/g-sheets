@@ -3,10 +3,11 @@ var fs = require('fs')
 
 const create = io => {
     globalIo = io;
-    return initSocket;
+    return initSocket;// The Metho who creates the instance socket method 
 }
 
 const initSocket = socket => {
+    
     socket.on("JOIN_ON", data => {
         socket.join(data.filename);
         console.log("JOINING FILENAME ROOM:"+data.filename+" USER:"+ data.username);

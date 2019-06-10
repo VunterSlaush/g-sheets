@@ -49,12 +49,10 @@ function triggerEdit(element) {
     releaseCell(id);
 }
 
-function blockSelfCell(cell, element) {
-    const isBlocked = $(element).attr("disabled")
-    if (!isBlocked) {
-        console.log("BLOCKING: ", cell);
-        $("#" + cell).attr("disabled", true);
-    }
+function blockSelfCell(cell, color) {
+    console.log("BLOCKING: ", cell);
+    $("#" + cell).attr("disabled", true);
+    // HERE YOU COULD CHANGE THE COLOR OF THE CELL WITH JQUERY
 }
 
 function releaseSelfCell(cell) {

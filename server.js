@@ -16,7 +16,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 app.use(fileUpload());
 
-
 app.get("/page", (req, res) => {
     res.sendFile(__dirname + '/index.html');
 });
@@ -41,7 +40,7 @@ app.use(function(req, res, next) {
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
-  console.log("ERR", err);
+  console.log("Theres An Error:", err);
   res.locals.message = err.message;
   res.locals.error = err;
   // render the error page

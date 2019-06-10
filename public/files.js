@@ -45,7 +45,6 @@ function uploadFile(event){
     var file = document.getElementById("uploadFile").files[0];
     var formData = new FormData();
     formData.append("file", file);
-    console.log(formData);
 
     $.ajax({
       url: '/upload',
