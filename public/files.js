@@ -18,6 +18,14 @@ function renderFiles(files) {
     }
 }
 
+function renderUsersOnRoom(userList) {
+    $("#userList").empty();
+    for (i = 0; i < userList.length; i++) {
+        list = "<li id='"+userList[i]+"'>" + userList[i] + "</li>";
+        $("#userList").append(list);
+    }
+}
+
 function selectFile(element){
     const id = $(element).attr("id");
     $("#openButton").prop("disabled", true);

@@ -7,10 +7,10 @@ const create = io => {
 }
 
 const initSocket = socket => {
-    socket.on("JOIN_ON", filename => {
-        socket.join(filename);
-        console.log("JOINING FILENAME ROOM:"+filename);
-        socket.to(filename).emit("JOIN_ON", filename);
+    socket.on("JOIN_ON", data => {
+        socket.join(data.filename);
+        console.log("JOINING FILENAME ROOM:"+data.filename+" USER:"+ data.username);
+        socket.to(data.filename).emit("JOIN_ON", data);
     });
 
     socket.on("BLOCK_CELL", data => {

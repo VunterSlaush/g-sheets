@@ -35,6 +35,7 @@ function createTableBody() {
 
 function fillTable(data) {
     $(".editable-cell").attr("disabled", false);
+    $(".editable-cell").val("");// Clean ALL THE FIELDS!
     for (const key in data) {
         $("#" + key).val(data[key]);
     }

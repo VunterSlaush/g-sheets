@@ -1,4 +1,6 @@
 var socket = io();
+var usersInRoom = [];
+
 
 socket.on('LOAD_FILES', function(){
     loadFiles();
@@ -16,14 +18,23 @@ socket.on("EDIT_CELL", data => {
     editSelfCell(data.cell, data.data);
 });
 
+socket.on("JOIN_ON", data => {
+    usersInRoom.push(data.username);
+    renderUsersOnRoom(usersInRoom);
+});
+
 function startEdit(filename){
-    socket.emit("JOIN_ON", filename);
+    socket.emit("JOIN_ON", {
+        filename,
+        username
+    });
 }
 
 function blockCell(cell){
     socket.emit("BLOCK_CELL", {
         file: selected,
-        cell
+        cell,
+        username
     });
 }
 
@@ -31,7 +42,8 @@ function releaseCell(cell)
 {
     socket.emit("RELEASE_CELL", {
         file: selected,
-        cell
+        cell,
+        username
     });
 }
 
@@ -39,6 +51,7 @@ function editFile(cell, data){
     socket.emit("EDIT_CELL", {
         file: selected,
         cell,
-        data
+        data,
+        username
     });
 }
