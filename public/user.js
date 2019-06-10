@@ -18,14 +18,15 @@ function login() {
                 btnClass: 'btn-blue',
                 action: function () {
                     var name = this.$content.find('.name').val();
-                    var password = this.$content.find('.password').val();
-                    if(!name || !password){
+                    //var password = this.$content.find('.password').val();
+                    if(!name){
                         $.alert('Este campo no puede estar vacio');
                         return false;
                     }
                     // HERE YOU CAN ADD THE REQUEST TO THE SERVER TO SEE IF THE LOGIN IS OK
                     // return loginRequest(name, password);
                     username = name;
+                    return true;
                 }
             },
             cancel: function () {
@@ -44,3 +45,4 @@ function login() {
     });
 }
 
+login();
